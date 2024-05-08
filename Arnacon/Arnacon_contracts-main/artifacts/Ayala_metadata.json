@@ -1,0 +1,355 @@
+{
+	"compiler": {
+		"version": "0.8.25+commit.b61c2a91"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract IENS",
+						"name": "_ens",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "commitment",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint32",
+						"name": "leafIndex",
+						"type": "uint32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "Commit",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "data",
+						"type": "address"
+					}
+				],
+				"name": "showAddress",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "data",
+						"type": "bool"
+					}
+				],
+				"name": "showBool",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "showBytes",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "v",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "r",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "s",
+						"type": "bytes32"
+					}
+				],
+				"name": "showSignature",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "data",
+						"type": "string"
+					}
+				],
+				"name": "showString",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "computeHash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "computeNamehash",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "namehash",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ens",
+				"outputs": [
+					{
+						"internalType": "contract IENS",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_ENS",
+						"type": "string"
+					}
+				],
+				"name": "getENSToServiceProvider",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "sig",
+						"type": "bytes"
+					}
+				],
+				"name": "splitSignature",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_ENS",
+						"type": "string"
+					}
+				],
+				"name": "updateUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_signature",
+						"type": "bytes"
+					},
+					{
+						"internalType": "string",
+						"name": "_messageSigned",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_ENS",
+						"type": "string"
+					}
+				],
+				"name": "updateUserRegistery",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "signature",
+						"type": "bytes"
+					}
+				],
+				"name": "verifySignature",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Arnacon_contracts-main/ayala.sol": "Ayala"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Arnacon_contracts-main/ayala.sol": {
+			"keccak256": "0xca8bf68dd2358c8fde0938638c81e965f2b9a5f9b4ca1e2d19aecde19afc6008",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://53a2b5c2eb113c84c0149d324d690a9abb25c8e9a09d286755bbfada00af5524",
+				"dweb:/ipfs/QmbRvFrzKcV15V9TR9MhJVEFYK3JCtjVkkjRhA5b3pMKEU"
+			]
+		},
+		"Arnacon_contracts-main/interfaces.sol": {
+			"keccak256": "0xfb31955ba6637d7924c5891d6e9793315b7167f856825190bdd225afb6caf949",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://11879ff904f12a78e04f41bc288fa1c8e4b3b5bf71960b966adb9a758cc1b401",
+				"dweb:/ipfs/QmSGMnLCB2hZr21rGEojAiyUbLoXQmg9cCDq7QzFLM8njK"
+			]
+		},
+		"Arnacon_contracts-main/merkleTree.sol": {
+			"keccak256": "0xf4d48c25b214275632557c75b93f7c339cb4cdd600a67a32c089048353495463",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://295d262c6d6553f7f85c0c6d0db1034c00ca619eff585d972934a2464d5061e8",
+				"dweb:/ipfs/QmRZVfnbmUZJEBCUPoQNNSgmom3b6MgeFHcP7m5M5qrAyB"
+			]
+		},
+		"Arnacon_contracts-main/structs.sol": {
+			"keccak256": "0x342694890d95277b8da7dc4d385e76ce3e9968637585ad07ca43b06fc4ace02d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ce96201cc41232acaef289f56353a3fc6ebcd017509c4e5d001046afc9425edb",
+				"dweb:/ipfs/QmTb4kQNY3VBkELyhXqXQGzjN8UYF469tdHyGAggDDQuF9"
+			]
+		},
+		"hardhat/console.sol": {
+			"keccak256": "0x7434453e6d3b7d0e5d0eb7846ffdbc27f0ccf3b163591263739b628074dc103a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://49355f780520494d1d5a0f01858385e51bb5280ce0ecfb960f16995065dca395",
+				"dweb:/ipfs/QmSwJ6C5QLz6xKeQZS8wbwjU1KxRFTYfwbGmtzisd5sRW4"
+			]
+		}
+	},
+	"version": 1
+}
